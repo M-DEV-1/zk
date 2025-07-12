@@ -5,3 +5,5 @@ This project implements a privacy-preserving identity verification system where 
 The system uses zk-SNARKs generated via Circom and SnarkJS to prove claims (e.g., “age ≥ 18” or “within 50km of a location”) without revealing the raw data. 
 
 Proofs are verified on-chain using Solidity smart contracts deployed via Hardhat, specifically through dedicated verifier contracts (e.g., AgeVerifier.sol, LocationVerifier.sol) and a ConsentManager.sol contract that handles session challenges and binds proofs to specific verification requests to prevent replay attacks.
+
+Tech Stack: Circom, SnarkJS, NextJS, PinataIPFS
