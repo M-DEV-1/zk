@@ -7,3 +7,5 @@ The system uses zk-SNARKs generated via Circom and SnarkJS to prove claims (e.g.
 Proofs are verified on-chain using Solidity smart contracts deployed via Hardhat, specifically through dedicated verifier contracts (e.g., AgeVerifier.sol, LocationVerifier.sol) and a ConsentManager.sol contract that handles session challenges and binds proofs to specific verification requests to prevent replay attacks.
 
 Tech Stack: Circom, SnarkJS, NextJS, PinataIPFS
+
+<img width="1139" height="706" alt="image" src="https://github.com/user-attachments/assets/e9c4941b-161d-4e0d-bb62-c624624d64e8" />
