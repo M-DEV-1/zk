@@ -6,6 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "config": {
+    "solidity": {
+      "version": "0.8.17"
+    },
+    "paths": {
+      "contracts": "./contracts",
+      "circuits": "../client/src/circuits",
+      "tests": "./test",
+      "cache": "./cache",
+      "build": {
+        "snark": "./circuits/build/snark",
+        "contracts": "./build/contracts"
+      }
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
