@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npm run pre-flight && next dev --turbopack",
+    "build": "npm run pre-flight && next build",
+    "start": "npm run pre-flight && next start",
+    "lint": "next lint",
+    "compile-circuits": "cd ../contracts && npm install && node scripts/compile-circuits.js && cd ../client",
+    "store-keys": "node ./scripts/storeVerificationKey.mjs",
+    "pre-flight": "npm run compile-circuits && npm run store-keys"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
