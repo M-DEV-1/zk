@@ -1,0 +1,31 @@
+# Ignore all build artifacts
+build/
+*.r1cs
+*.wasm
+*.zkey
+*.sym
+*.ptau
+*.json
+
+# Ignore proof and witness files
+*.wtns
+*.proof
+*.public
+
+node_modules
+.env
+
+# Hardhat files
+/cache
+/artifacts
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
