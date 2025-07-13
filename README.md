@@ -43,7 +43,6 @@ We propose a Web3-based identity and location verification system using zk-SNARK
 
 - 🎥 *Video Link*: Dynamic age & location zk proof: https://drive.google.com/file/d/144mr0pDCersiGGzOrAZwBRI6Y_OIlyg2/view?usp=sharing
 AI Agent: https://drive.google.com/file/d/1OZg9I2Xr_LTN7ShUE56mkgP4ugXXxavI/view?usp=sharing
-- 🖥 *Live App (if available)*: https://zk-woad.vercel.app/
 
 ---
 
