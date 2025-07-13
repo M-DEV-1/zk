@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db/db";
-import Models from "@/lib/db/models";
+
+import RequestModel from "@/lib/db/models/requests.model";
 
 export async function GET() {
   try {
     await dbConnect();
 
-    const allRequests = await Models.Requests.find({})
+    const allRequests = await RequestModel.find({})
       .sort({ requestTime: -1 }) // latest first
 
     return NextResponse.json({ requests: allRequests });
@@ -30,7 +31,7 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing sessionId" }, { status: 400 });
     }
 
-    const updated = await Models.Requests.findOneAndUpdate(
+    const updated = await RequestModel.findOneAndUpdate(
       { sessionId },
       { $set: updates },
       { new: true }

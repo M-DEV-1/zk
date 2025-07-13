@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run pre-flight && next dev --turbopack",
-    "build": "npm run pre-flight && next build",
-    "start": "npm run pre-flight && next start",
+    "dev": "npm run pre-flight && next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "compile-circuits": "cd ../contracts && npm install && node scripts/compile-circuits.js && cd ../client",
     "store-keys": "node ./scripts/storeVerificationKey.mjs",
     "pre-flight": "npm run compile-circuits && npm run store-keys"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.3.2",
     "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-popover": "^1.1.14",
     "@radix-ui/react-progress": "^1.1.7",
+    "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
     "@rjsf/core": "^5.24.12",
     "@rjsf/validator-ajv8": "^5.24.12",

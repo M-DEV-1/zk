@@ -3,8 +3,9 @@ import { getAvailableFields, validateFields } from '@/lib/schemas/fieldMapping';
 import { SignJWT } from 'jose';
 import { v4 as uuidv4 } from 'uuid';
 
-import dbConnect from '@/utils/db/db';
-import Models from '@/utils/db/models';
+import dbConnect from '@/lib/db/db';
+import UserModel from '@/lib/db/models/user.model';
+import RequestModel from '@/lib/db/models/request.model';
 
 const JWT_SECRET = new TextEncoder().encode('super-secret-key');
 
@@ -53,7 +54,7 @@ export async function POST(request) {
     const sessionId = uuidv4();
 
     // Fetch user from DB to get name and cid
-    const userDoc = await Models.User.findOne({ cid });
+    const userDoc = await UserModel.findOne({ cid });
     if (!userDoc) {
       return NextResponse.json({ error: "User not found in database" }, { status: 404 });
     }
@@ -73,7 +74,7 @@ export async function POST(request) {
       .sign(JWT_SECRET);
 
     // FIXED: Store userId and use proofType from frontend
-    await Models.Requests.create({
+    await RequestModel.create({
       sessionId,
       user: userDoc._id, // Add userId field for verification lookup
       cid: userDoc.cid,

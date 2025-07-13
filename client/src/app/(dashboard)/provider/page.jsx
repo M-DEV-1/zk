@@ -102,7 +102,7 @@ export default function ProviderDashboard() {
         setIsLoadingUsers(true);
         console.log("Fetching users from database...");
 
-        const response = await fetch("/api/users");
+        const response = await fetch("/api/user");
 
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));

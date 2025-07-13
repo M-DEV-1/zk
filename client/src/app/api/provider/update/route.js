@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db/db";
-import Models from "@/lib/db/models";
+import RequestModel from "@/lib/db/models/request.model";
 
 export async function POST(req) {
   try {
@@ -19,7 +19,7 @@ export async function POST(req) {
 
     console.log(`Updating session ${sessionId} to status: ${status}`);
 
-    const updated = await Models.Requests.findOneAndUpdate(
+    const updated = await RequestModel.findOneAndUpdate(
       { sessionId },
       { 
         $set: { 
