@@ -6,8 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Eye, Lock, Zap, CheckCircle, Users } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useAccount } from "wagmi";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { toast } from "sonner";
 
 export default function Home() {
@@ -24,7 +22,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <section className="container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
@@ -260,8 +257,6 @@ export default function Home() {
           </Card>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

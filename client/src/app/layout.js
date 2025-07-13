@@ -26,10 +26,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
         <Toaster />
-        <WagmiWrapper>{children}</WagmiWrapper>
-        <Footer/>
+        <WagmiWrapper>
+          <Navbar />
+          {children}
+        </WagmiWrapper>
+        <Footer />
       </body>
     </html>
   );
