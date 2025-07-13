@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { MultipleSelector } from "@/components/multiple-selector";
@@ -40,7 +40,6 @@ function formatISTTime(date) {
 }
 
 export default function ProviderDashboard() {
-  const { toast } = useToast();
   const [requests, setRequests] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [users, setUsers] = useState([]);
