@@ -70,7 +70,7 @@ export default function ProviderDashboard() {
   // FIXED: Define fetchRequests function properly
   const fetchRequests = async () => {
     try {
-      const res = await fetch("/api/requests/provider");
+      const res = await fetch("/api/provider/request");
       if (!res.ok) throw new Error("Failed to fetch requests");
       const data = await res.json();
       setRequests(data.requests || []);
@@ -177,7 +177,7 @@ export default function ProviderDashboard() {
           for (const proofType of proofTypes) {
             console.log(`Verifying proof type: ${proofType} for session: ${req.sessionId}`);
 
-            const res = await fetch("/api/verify-proof", {
+            const res = await fetch("/api/verify", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -339,7 +339,7 @@ export default function ProviderDashboard() {
         proofType: selectedProofs
       };
 
-      const response = await fetch("/api/request-provider", {
+      const response = await fetch("/api/provider/request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(providerRequest),
@@ -397,7 +397,7 @@ export default function ProviderDashboard() {
         status: status === "completed" ? "Completed" : "Revoked"
       };
 
-      const response = await fetch("/api/provider/update-session", {
+      const response = await fetch("/api/provider/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updateData)
