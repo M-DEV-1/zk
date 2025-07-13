@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
-import { BackButton } from "./backButton";
+import { BackButton } from "../backButton";
 import React from "react";
 
 export const CustomFieldTemplate = React.memo(function CustomFieldTemplate(props) {

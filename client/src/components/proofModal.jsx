@@ -67,7 +67,7 @@ export default function ProofProgressModal({
 
         setCurrentStep("upload");
 
-        const res = await fetch("/api/upload-vc", {
+        const res = await fetch("/api/user/upload", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(vc),
