@@ -8,7 +8,7 @@ import { AadhaarVCSchema, AadhaarVCUISchema } from "@/lib/schemas/verifiableCred
 import { Fingerprint, ArrowBigRightDashIcon } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { useAccount, useSignMessage } from "wagmi";
-import { Toaster } from "sonner";
+import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { generateAgeProof } from "@/lib/scripts/generateAgeProof";
 import ProofProgressModal from "@/components/proofModal";
@@ -105,7 +105,7 @@ export default function AadhaarVCForm() {
 
     useEffect(() => {
         if (!navigator.geolocation) {
-            Toaster({
+            toast({
                 title: "Geolocation not supported",
                 description: "Your browser does not support geolocation.",
                 variant: "destructive",
@@ -127,7 +127,7 @@ export default function AadhaarVCForm() {
                 }));
             },
             (err) => {
-                Toaster({
+                toast({
                     title: "Location error",
                     description: err.message,
                     variant: "destructive",
@@ -144,7 +144,7 @@ export default function AadhaarVCForm() {
             });
             return signature;
         } catch (err) {
-            Toaster({
+            toast({
                 title: "Signing error",
                 description: err.message || "Failed to sign message",
                 variant: "destructive",
@@ -156,7 +156,7 @@ export default function AadhaarVCForm() {
     };
 
     const handleSuccess = (cid) => {
-        Toaster({ title: "Credential uploaded", description: `IPFS CID: ${cid}` });
+        toast({ title: "Credential uploaded", description: `IPFS CID: ${cid}` });
         setVcCID(cid);
         setSubmitted(true);
         const name = formData.name || "Unknown"; // this line is an example of why we should do typescript

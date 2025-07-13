@@ -13,7 +13,7 @@ import {
 import { Download, Clock, X, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Toaster } from "sonner";
+import { toast } from "sonner";
 import ConsentModal from "@/components/ConsentModal";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { useSignMessage } from "wagmi";
@@ -62,7 +62,7 @@ export default function UserDashboard() {
 
         } catch (error) {
             console.error("Error fetching requests:", error);
-            Toaster({
+            toast({
                 title: "Error",
                 description: `Failed to fetch requests: ${error.message}`,
                 variant: "destructive"
@@ -169,7 +169,7 @@ export default function UserDashboard() {
             setResignSuccess(true);
             setResignStep("done");
 
-            Toaster({ title: "VC Updated", description: `IPFS CID: ${data.cid}` });
+            toast({ title: "VC Updated", description: `IPFS CID: ${data.cid}` });
 
             // Update the request in database with new signature
             await updateRequest(req.sessionId, {
@@ -238,14 +238,14 @@ export default function UserDashboard() {
             setShowConsentModal(false);
             setCurrentProviderData(null);
 
-            Toaster({
+            toast({
                 title: "Consent Approved",
                 description: `Session started with ${currentProviderData.name}`,
             });
 
         } catch (error) {
             console.error("Error approving consent:", error);
-            Toaster({
+            toast({
                 title: "Error",
                 description: "Failed to approve consent",
                 variant: "destructive"
@@ -270,7 +270,7 @@ export default function UserDashboard() {
             setShowConsentModal(false);
             setCurrentProviderData(null);
 
-            Toaster({
+            toast({
                 title: "Consent Rejected",
                 description: "No data will be shared",
                 variant: "destructive",
@@ -278,7 +278,7 @@ export default function UserDashboard() {
 
         } catch (error) {
             console.error("Error rejecting consent:", error);
-            Toaster({
+            toast({
                 title: "Error",
                 description: "Failed to reject consent",
                 variant: "destructive"
@@ -301,13 +301,13 @@ export default function UserDashboard() {
                     status: "Revoked"
                 });
 
-                Toaster({
+                toast({
                     title: "Session Revoked",
                     description: "Access has been revoked",
                 });
             } else {
                 console.log(`Cannot revoke session ${sessionId}: status=${request.status}, expired=${now >= request.timerEnd}`);
-                Toaster({
+                toast({
                     title: "Cannot Revoke",
                     description: "Session is already expired or completed",
                     variant: "destructive"
@@ -316,7 +316,7 @@ export default function UserDashboard() {
 
         } catch (error) {
             console.error("Error revoking session:", error);
-            Toaster({
+            toast({
                 title: "Error",
                 description: "Failed to revoke session",
                 variant: "destructive"
@@ -558,7 +558,7 @@ export default function UserDashboard() {
             <Dialog open={showResignModal} onOpenChange={(open) => {
                 setShowResignModal(open);
                 if (!open && !resignSuccess) {
-                    Toaster({
+                    toast({
                         title: "Re-signing Required",
                         description: "You must re-sign your credential. If you close this without signing, you will be barred from further authentication.",
                         variant: "destructive",

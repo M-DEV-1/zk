@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WagmiWrapper from "@/components/wrapper/wagmi";
-import { Toaster } from "sonner";
+import { toast } from "sonner";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster />
+        <toast />
         <WagmiWrapper>
           <Navbar />
           {children}

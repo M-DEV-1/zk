@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle, Loader2, XCircle, Copy } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Toaster } from "sonner";
+import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 const steps = [
@@ -144,7 +144,7 @@ export default function ProofProgressModal({
                   size="icon"
                   onClick={() => {
                     navigator.clipboard.writeText(cid);
-                    Toaster({ title: "Copied", description: "CID copied to clipboard" });
+                    toast({ title: "Copied", description: "CID copied to clipboard" });
                   }}
                 >
                   <Copy className="w-4 h-4" />
