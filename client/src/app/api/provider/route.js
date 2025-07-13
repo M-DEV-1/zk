@@ -4,8 +4,8 @@ import { SignJWT } from 'jose';
 import { v4 as uuidv4 } from 'uuid';
 
 import dbConnect from '@/lib/db/db';
-import UserModel from '@/lib/db/models/user.model';
-import RequestModel from '@/lib/db/models/request.model';
+import UserModel from "@/lib/db/models/user.model";
+import RequestModel from "@/lib/db/models/requests.model";
 
 const JWT_SECRET = new TextEncoder().encode('super-secret-key');
 
