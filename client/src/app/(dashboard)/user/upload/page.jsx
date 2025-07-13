@@ -195,10 +195,10 @@ export default function AadhaarVCForm() {
                     templates={{ FieldTemplate: CustomFieldTemplate }}
                 >
                     <div className="pt-2 flex justify-between items-center">
-                        <Button type="button" variant="secondary" onClick={handlePrefill} className="text-xs px-3 py-1">
+                        <Button type="button" onClick={handlePrefill} className="text-xs px-3 py-1">
                             Pre-fill
                         </Button>
-                        <Button type="submit" variant="secondary" className="min-w-[120px]" disabled={isSubmitting}>
+                        <Button type="submit" className="min-w-[120px]" disabled={isSubmitting}>
                             {isSubmitting ? (
                                 <span className="flex items-center gap-2">
                                     <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
@@ -216,7 +216,7 @@ export default function AadhaarVCForm() {
                         <div>
                             <Button
                                 type="button"
-                                variant={vcCID ? "secondary" : "default"}
+                                variant={vcCID ? "" : "default"}
                                 size="lg"
                                 onClick={vcCID ? () => router.push("/dashboard") : undefined}
                                 disabled={!vcCID}
