@@ -218,7 +218,7 @@ export default function AadhaarVCForm() {
                                 type="button"
                                 variant={vcCID ? "" : "default"}
                                 size="lg"
-                                onClick={vcCID ? () => router.push("/dashboard") : undefined}
+                                onClick={vcCID ? () => router.push("/user") : undefined}
                                 disabled={!vcCID}
                             >
                                 Next <ArrowBigRightDashIcon />
