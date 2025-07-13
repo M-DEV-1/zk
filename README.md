@@ -20,7 +20,8 @@ Welcome to our submission for the *Agentic Ethereum Hackathon* by Reskilll & Geo
 
 ## 📌 Problem Statement
 
-We addressed the challenge: *Decentralization of India's current Web2 based public service infrastructure”*  
+We addressed the challenge: *India’s centralized identity systems like Digilocker lack user-controlled consent, privacy-preserving proofs, and are vulnerable to replay or location spoofing attacks. There’s no dynamic session validation or AI-driven data utilization of public records while keeping identity decentralized.*
+
 Brief description of the challenge and why it matters.
 India’s current public service infrastructure (e.g., Digilocker, job portals, e-health records) relies on centralized Web2 systems to manage user identity, age, location, and session data. These systems suffer from:
 	1.	Centralized Control: Users have little control over what data is shared or how it’s used. Consent is vague, non-session-specific, and often not cryptographically auditable.
@@ -53,8 +54,8 @@ A short pitch of your solution — what you built, who it’s for, and why it’
 ## 📽 Demo
 
 - 🎥 *Video Link*: Dynamic age & location zk proof: https://drive.google.com/file/d/144mr0pDCersiGGzOrAZwBRI6Y_OIlyg2/view?usp=sharing
-- 
-- 🖥 *Live App (if available)*: [URL]
+AI Agent: https://drive.google.com/file/d/1OZg9I2Xr_LTN7ShUE56mkgP4ugXXxavI/view?usp=sharing
+- 🖥 *Live App (if available)*: https://zk-woad.vercel.app/
 
 ---
 
