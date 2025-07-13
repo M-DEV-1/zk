@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { pinata } from "@/utils/config";
-import dbConnect from "@/utils/db/db";
-import Models from "@/utils/db/models";
+import { pinata } from "@/lib/config";
+import dbConnect from "@/lib/db/db";
+import UserModel from "@/lib/db/models/user.model";
 import bcrypt from "bcrypt";
 
 let cid;
@@ -46,7 +46,7 @@ export async function POST(request) {
 
     try {
       await dbConnect();
-      await Models.User.create({ 
+      await UserModel.create({ 
         name: formData.credentialSubject.name,
         walletAddress: formData.credentialSubject.walletAddress, 
         cid,
