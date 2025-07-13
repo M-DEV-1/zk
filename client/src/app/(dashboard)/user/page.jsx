@@ -53,7 +53,7 @@ export default function UserDashboard() {
             setIsRefreshing(true);
             console.log(`Fetching requests for wallet: ${address}`);
 
-            const res = await fetch("/api/requests/provider");
+            const res = await fetch("/api/provider/request");
 
             if (!res.ok) throw new Error("Failed to fetch requests");
             const data = await res.json();
@@ -76,7 +76,7 @@ export default function UserDashboard() {
     // update req in db
     const updateRequest = async (sessionId, updates) => {
         try {
-            const response = await fetch('/api/requests/provider', {
+            const response = await fetch('/api/provider/request', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -157,7 +157,7 @@ export default function UserDashboard() {
             setResignStep("upload");
 
             // 4. Upload the VC
-            const res = await fetch("/api/upload-vc", {
+            const res = await fetch("/api/user/upload", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedVC),
