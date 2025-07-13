@@ -10,7 +10,6 @@ Welcome to our submission for the *Agentic Ethereum Hackathon* by Reskilll & Geo
 
 We addressed the challenge: *India’s centralized identity systems like Digilocker lack user-controlled consent, privacy-preserving proofs, and are vulnerable to replay or location spoofing attacks. There’s no dynamic session validation or AI-driven data utilization of public records while keeping identity decentralized.*
 
-Brief description of the challenge and why it matters.
 India’s current public service infrastructure (e.g., Digilocker, job portals, e-health records) relies on centralized Web2 systems to manage user identity, age, location, and session data. These systems suffer from:
 
 1. Centralized Control: Users have little control over what data is shared or how it’s used. Consent is vague, non-session-specific, and often not cryptographically auditable.
