@@ -46,7 +46,7 @@ A short pitch of your solution — what you built, who it’s for, and why it’
 ## 📽 Demo
 
 - 🎥 *Video Link*: [YouTube/Drive Link]  
-- 🖥 *Live App (if available)*: [URL]
+- 🖥 *Live App (if available)*: [zk-woad.vercel.app](https://zk-woad.vercel.app)
 
 ---
 
